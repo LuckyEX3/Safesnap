@@ -41,7 +41,7 @@
         android:ems="10"
         android:hint="Enter your email"
         android:inputType="text"
-        android:text=""
+        android:textSize="16sp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"/>
 
@@ -65,6 +65,7 @@
         android:ems="10"
         android:hint="Enter password"
         android:inputType="textPassword"
+        android:textSize="16sp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"/>
 

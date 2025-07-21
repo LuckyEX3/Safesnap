@@ -4,13 +4,26 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageView
+        android:id="@+id/emergencyIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/location"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="276dp"
         android:layout_height="149dp"
         android:gravity="center"
         android:text="Share your exact GPS location with  trusted contacts automatically  when an emergency alert is  triggered. "
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,12 +44,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.379" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:text="Next"
         android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@drawable/status_bar"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

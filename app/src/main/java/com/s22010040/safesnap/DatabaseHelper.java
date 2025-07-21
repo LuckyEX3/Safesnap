@@ -16,7 +16,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_1 = "ID";
     public static final String COL_2 = "username";
     public static final String COL_3 = "password";
-
     public static final String COL_4 = "email";
 
     public DatabaseHelper(@Nullable Context context) {
@@ -33,8 +32,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME  );
         onCreate(db);
-
-
     }
 
     public boolean insertData(String username ,String email, String password){
@@ -67,4 +64,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return isValid;
     }
+
+    //new code
+
+    public boolean updateUserDetails(String oldEmail, String newName, String newEmail) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2, newName);
+        contentValues.put(COL_4, newEmail);
+
+        // Update the row where email = oldEmail
+        int result = db.update(TABLE_NAME, contentValues, COL_4 + " = ?", new String[]{oldEmail});
+
+        return result > 0;  // true if updated successfully
+    }
+
+    public Cursor getUserDetails(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + COL_4 + " = ?", new String[]{email});
+        return cursor;
+    }
+
 }

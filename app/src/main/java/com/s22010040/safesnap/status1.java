@@ -17,7 +17,6 @@ public class status1 extends AppCompatActivity {
         setContentView(R.layout.activity_status1);
 
         initializeViews();
-
     }
     private void initializeViews()
 

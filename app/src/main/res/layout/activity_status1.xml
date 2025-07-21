@@ -6,42 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".status1">
 
+    <ImageView
+        android:id="@+id/emergencyIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/siren"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.213" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="296dp"
         android:layout_height="131dp"
         android:gravity="center"
-        android:text="Instantly alert your emergency contacts with a single tap or shake gesture.
-        Your safety is just one action away. "
-        android:textSize="20sp"
+        android:text="Instantly alert your emergency contacts with a single tap or shake gesture.Your safety is just one action away. "
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintVertical_bias="0.535" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewStatus1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emergency SOS"
+        android:background="@android:color/transparent"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintVertical_bias="0.381" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
         android:layout_width="140dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/status_bar"
         android:text="Next"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.801" />
+        app:layout_constraintVertical_bias="0.788" />
 </androidx.constraintlayout.widget.ConstraintLayout>

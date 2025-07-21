@@ -6,14 +6,22 @@
     android:layout_height="match_parent"
     android:background="#F8F8F8">
 
-    <View
+    <LinearLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#E53E3E"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="#2472fc"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/headerSection"
@@ -22,7 +30,7 @@
         android:orientation="horizontal"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="26dp"
         app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -86,7 +94,7 @@
         app:layout_constraintTop_toBottomOf="@id/headerSection"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="60dp" />
+        android:layout_marginTop="70dp" />
 
     <!-- First Row Buttons Container -->
     <LinearLayout
@@ -96,19 +104,19 @@
         android:orientation="horizontal"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="90dp"
         android:weightSum="2"
         app:layout_constraintTop_toBottomOf="@id/sosBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/quickCallBtn"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_btn"
+            android:background="@drawable/buttons"
             android:text="Quick Call"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -116,13 +124,13 @@
             android:gravity="center"
             android:textAllCaps="false" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/contactsBtn"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:background="@drawable/rounded_btn"
+            android:background="@drawable/buttons"
             android:text="Contacts"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -146,13 +154,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/shareLocationBtn"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/rounded_btn"
+            android:background="@drawable/buttons"
             android:text="Share Location"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -160,13 +168,13 @@
             android:gravity="center"
             android:textAllCaps="false" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/settingsBtn"
             android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:background="@drawable/rounded_btn"
+            android:background="@drawable/buttons"
             android:text="Setting"
             android:textColor="#FFFFFF"
             android:textStyle="bold"

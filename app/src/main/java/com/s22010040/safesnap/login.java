@@ -1,6 +1,7 @@
 package com.s22010040.safesnap;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -27,7 +28,18 @@ public class login extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE);
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
+
+        if (isLoggedIn) {
+            // Go directly to dashboard
+            startActivity(new Intent(login.this, dashboard.class));
+            finish(); // Prevent back navigation to login
+            return;
+        }
+
        initializeView();
+
 
     }
 
@@ -61,9 +73,15 @@ public class login extends AppCompatActivity {
             String pass = editPassword.getText().toString();
 
             if (db.validateUser(user, pass)) {
+                SharedPreferences sharedPreferences = getSharedPreferences("login_prefs", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("isLoggedIn", true);
+                editor.putString("user_email", user);
+                editor.apply();
+
                 Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-                // Go to next activity, e.g., HomeActivity
                 startActivity(new Intent(login.this, dashboard.class));
+                finish(); // Close login screen so user can’t go back
             } else {
                 Toast.makeText(this, "Invalid credentials", Toast.LENGTH_SHORT).show();
             }
